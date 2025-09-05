@@ -1,0 +1,52 @@
+Spring Framework is a framework used to build standalone, enterprise applications(production-grade) using java(primarily). Spring boot is an extension or tool to this spring framework to make building spring applications simplified. The spring framework is vast and has a lot of features along with a huge community support. 
+
+What is Spring?
+- It is an application framework that lets you build enterprise java applications. 
+- You write business logic only and spring handles the rest. It has that model for you to build those applications. 
+
+Problems with Spring : 
+ - It has a huge framework with vast number of features, so it gets overwhelming. But, over the years spring has given support to the community to all the different ways to build an application. 
+ - There are multiple set up steps. To achieve what you want your application to do, it takes a lot of configuration set up and dependencies set up to build what is needed. 
+ - Multiple configuration steps. 
+ - Multiple build and deploy steps.
+
+Spring boot helps you solve all these problems by reducing these complexities to only build your business logic.
+Simply it abstracts all these things and ensure you only focus on business logic.
+
+To add dependencies in java, we used to add the JAR files of whatever dependencies we needed to the application's classpaths.
+In spring boot, we use **maven** to add dependencies directly by mentioning what JARs or dependencies are needed into a pom.xml file. Maven is a built-in dependency management tool. 
+
+Now, when we create a plain Maven project, it has a pom.xml file where we add all the dependencies.
+To convert this project into a spring boot project, we add a <parent> section specifying 3 tags namely - groupId, artifactId, and version. We specify the specs of the spring boot tool inside spring framework. This tag's inclusion denotes that the maven project is now in fact a child of the parent spring boot project.
+
+The second step is to add dependencies into our project inside the dependencies tag.
+In spring boot, we need some dependencies by default to make our web application work, so maven simply wraps all the required dependencies into a single dependency that goes by the name "spring-boot-starter-web". This by default adds all the web related JARs that are required to build a web application. 
+
+To change the version of JDK, we use java.version inside the properties tag and update the pom.xml file.
+Now, we create a java class inside src.main.java which will contain the main method and will be the starting point of our application. To tell spring boot that the main class is the main application, we apply the @SpringBootApplication annotation just above where we declare the main class. 
+
+The main method primarily contains code that tells spring boot to start the application and then create a servlet container and then host this application in the servlet container.
+We call the SpringApplication.run() method to run our spring boot application.
+
+Starting spring boot: 
+1. Sets up default configuration
+2. Starts Spring application context
+3. Performs class path scan
+4. Starts Tomcat server
+
+A controller is a java class that has certain annotations marked in it. These annotations let spring know what is the url being mapped and what should happen when a request goes to that url.
+So, first we will create a java class and mark it with an annotation of @Controller thus declaring it as a controller class. It will have information about what URL triggers it, 
+and what method to run when accessed. 
+
+The parent section and dependencies section in pom.xml signify different uses. The parent section just informs what versions of JARs to download, and the dependencies section determine what actual JAR files to download to Maven.
+If we remove the dependencies section, there will be no JAR files installed on the project even if the parent section is present, and vice versa. This is how spring boot allows you to use what JARs and what versions of those JARs to use.
+Highly-compatible. This preset list presented by spring does all the work automatically instead of you setting each JAR file manually.
+This preset list of combinations of JAR that work well without issues is known as the "Bill of Materials". 
+
+The tomcat server also known as the "Embedded Tomcat Server" need not be installed explicitly to run an application, it was already embedded into the project. The reason why an embedded server is better is because of it's convenience. There are some servlet container configuration steps that need to happen. When you deploy something to tomcat, some steps needs to be followed to add certain configuration to run your application. However, now the servlet container configuration has become a part of the application's configuration file. Now, you configure your tomcat along with the other configuration of your application. A standalone application is better that is what Spring Boot provides us. It's easy to develop, deploy and run. It is useful for a microservice architecture. When you have a monolithic application, it is hard to deploy the application and includes a lot of manual work. When a standalone application that is spring boot application, it becomes easy to deploy because now you just need to start the servlet container and the application which is really handy. 
+
+Spring MVC Architecture :
+Spring MVC or Model-View-Controller is an architecture that maps HTTP requests to suitable responses often displaying Views to the user that are UI pages, 
+or JSON responses if it is a REST api. Flow of the spring MVC architecture : User Request -> Controller -> Service -> Repository+Model+Database -> Controller -> View/JSON = Response. 
+
+To add a Business service, we use the @Service Annotation above the class declaration. To inject the service into a controller, we use the @Autowired annotation.
