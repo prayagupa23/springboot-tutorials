@@ -1,0 +1,56 @@
+What is Actuator?
+Actuator is like a dashboard for your Spring Boot application.
+It gives you ready-to-use endpoints to check health, monitor performance,
+and manage your app without writing extra code.
+
+With Actuator you can:
+- Check if the app is UP or DOWN
+- Monitor memory, CPU, and threads
+- View logs and metrics
+- Track HTTP requests
+- Integrate with monitoring tools (Prometheus, Grafana, etc.)
+
+2. How to Add Actuator
+Add this dependency in pom.xml:
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+Restart your app, and Actuator will be enabled.
+
+3. Default Endpoints
+Base URL: http://localhost:8080/actuator
+Some common endpoints:
+- /health       -> Shows app health status
+- /info         -> Shows app details (version, name)
+- /metrics      -> Performance metrics
+- /env          -> Environment variables and configs
+- /loggers      -> Logging levels
+- /threaddump   -> Active threads info
+
+4. Health Check
+Open: http://localhost:8080/actuator/health
+Response:
+{
+  "status": "UP"
+}
+
+5. Metrics
+Open: http://localhost:8080/actuator/metrics
+
+6. Security
+By default, only /health and /info are public.
+Other endpoints should be secured.
+
+To expose all endpoints (for development):
+
+application.properties:
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
+
+7. Summary
+- Add dependency spring-boot-starter-actuator
+- Explore endpoints at /actuator
+- Use /health, /info, /metrics frequently
+- Secure endpoints for production
+- Integrate with monitoring tools for dashboards
