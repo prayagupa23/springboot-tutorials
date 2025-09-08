@@ -1,0 +1,12 @@
+Furthermore, we can create our spring boot project in 3 different ways. These are the 3 common ways: 
+- Using Spring Initialzr, the user's way of creating a spring boot project from a simple user interface.
+- Using Spring Boot CLI, we can create a spring boot project using it's command line interface. 
+- By creating a simple maven project and adding the spring dependencies later to pom.xml file. 
+
+We can change the port of listening our application in the application's properties file called 'application.properties' using 'server.port = port number'. 
+
+Spring Data JPA : The Data Tier (connecting to the database) 
+
+JPA or Java Persistence API is a specification that lets you do ORM or Object Relational mapping. A database is mostly relational and is handled by writing SQL. Now, JPA maps the classes and it's objects in Java to the SQL tables in the database. 
+
+Spring data JPA is a separate project that lets you connect to a relational database and let you provide this JPA config on your entity classes and then handles most of the process. 
