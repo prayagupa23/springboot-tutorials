@@ -1,0 +1,8 @@
+To map our URL to different methods, we use different annotations for each for simplicity. We do have a common annotation that is the @RequestMapping which defaults to a GET request. But, we can specify the type of request by writing this into the () after you type the annotation. 
+
+like - 
+POST : @RequestMapping(method="RequestMethod.POST", value="your_url_here")
+PUT : @RequestMapping(method="RequestMethod.PUT", value="your_url_here")
+DELETE : @RequestMapping(method="RequestMethod.DELETE", value="your_url_here")
+
+similarly, we can use @PostMapping, @PutMapping, and @DeleteMapping respectively.
