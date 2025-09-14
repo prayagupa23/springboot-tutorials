@@ -11,4 +11,5 @@ These tutorials are designed to help newcomers understand Spring Boot developmen
 - **HTTPMethodsMapping** – Learn HTTP methods mapping in Spring Boot.
 - **Actuator** – Monitoring and managing Spring Boot applications.
 - **Spring Data JPA** – Java Persistence API and database integration with Spring Boot.
+
 ...more tutorials will be added here soon.
